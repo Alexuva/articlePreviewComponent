@@ -1,0 +1,270 @@
+/*THEMES*/
+$LightGrayBlue: hsl(210, 46%, 95%)
+$VeryDarkGrayBlue: hsl(217, 19%, 35%)
+$DesaturatedDarkBlue: hsl(214, 17%, 51%)
+$GrayishBlue:  hsl(212, 23%, 69%)
+
+/*FONTS*/
+@font-face 
+    font-family: 'Manrope-Medium'
+    src: url(fonts/Manrope-Medium.ttf)
+
+@font-face 
+    font-family: 'Manrope-Bold'
+    src: url(fonts/Manrope-Bold.ttf)
+
+/*RESET*/
+*
+    margin: 0px
+    padding: 0px
+
+/*GENERAL CONTENT*/
+body
+    width: 100vw
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    background: $LightGrayBlue
+
+    /*MAIN CONTAINER*/
+    .container
+        width: 90vw
+        height: 90vh
+        display: flex
+        justify-content: center
+        align-items: center
+        
+        .article-box
+            display: flex
+            flex-direction: row
+            justify-content: center
+            align-items: center
+            width: 50rem
+            height: 18rem
+            box-shadow: 5px 5px 25px 0px $GrayishBlue
+            border-radius: 1rem 1rem 1rem 1rem
+        
+            .pic-container
+                width: 25rem
+                height: 18rem
+                overflow: hidden
+                border-radius: 1rem 0rem 0rem 1rem
+                
+                img
+                    width: auto
+                    height: 100%
+                    object-fit: cover
+            
+            .info-container
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                width: 42.5rem
+                height: 18rem
+                background: white
+                border-radius: 0rem 1rem 1rem 0rem
+            
+                .title
+                    width: 25rem
+                    height: 6rem
+                    font-size: 0.7rem
+                    font-family: 'Manrope-Bold'
+                    color: $VeryDarkGrayBlue
+                
+                .info
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    width: 25rem
+                    height: 5rem
+                    font-size: 0.85rem
+                    font-family: 'Manrope-Medium'
+                    color: $DesaturatedDarkBlue
+                    line-height: 1.3rem
+
+
+                .author-box
+                    position: relative
+                    display: flex
+                    flex-direction: row
+                    justify-content: space-between
+                    align-items: center
+                    width: 25rem
+                    height: 4rem
+                    transition: all 100ms ease
+
+                    .author-pic
+                        width: 2.5rem
+                        height: 2.5rem
+                        overflow: hidden
+                        border-radius: 10rem
+
+                        img
+                            width: auto
+                            height: 100%
+                    
+                    .author-name
+                        display: flex
+                        flex-direction: column
+                        justify-content: center
+                        width: 18rem
+                        height: 2.5rem
+                        font-size: 0.8rem
+                        
+
+                        .name
+                            width: 18rem
+                            height: 1.25rem
+                            font-family: 'Manrope-Bold'
+                            color: $VeryDarkGrayBlue
+                        
+                        .date
+                            width: 18rem
+                            height: 1.25rem
+                            font-family: 'Manrope-Medium'
+                            color: $GrayishBlue
+
+                    .share
+                        width: 2rem
+                        height: 2rem
+                        background: $LightGrayBlue
+                        border: none
+                        border-radius: 10rem
+                        transition: all 500ms ease
+
+                        img
+                            width: auto
+                            height: 45%
+                    
+                    .share:hover
+                        cursor: pointer
+                        box-shadow: 0px 0px 2px 0px $GrayishBlue
+
+
+                    .share-box
+                        opacity: 0
+                        display: flex
+                        flex-direction: row
+                        justify-content: center
+                        align-items: center
+                        position: absolute
+                        width: 16rem
+                        height: 3.5rem
+                        top: -3.9rem
+                        right: -6.9rem
+                        background: $VeryDarkGrayBlue
+                        border-radius: 0.6rem
+                        box-shadow: 5px 5px 10px 0px $GrayishBlue
+                        transition: all 50ms ease
+
+                        .share-text
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            width: 4.5rem
+                            height: 2rem
+                            font-size: 0.8rem
+                            font-family: 'Manrope-Medium'
+                            letter-spacing: 0.4rem
+                            color: $GrayishBlue
+                        
+                        .icon
+                            margin-left: 1rem
+
+                    .share-box::after
+                        content:''
+                        position: absolute
+                        top: 3.2rem
+                        width: 0rem
+                        height: 0rem
+                        border-left: 1rem solid transparent
+                        border-right: 1rem solid transparent
+                        border-top: 1rem solid $VeryDarkGrayBlue
+                    
+@media ( max-width: 903px )
+    body .container .article-box
+        height: 45rem
+        flex-direction: column
+        justify-content: flex-start
+
+    body .container .article-box .pic-container
+        width: 50rem
+        height: 20rem
+        border-radius: 1rem 1rem 0rem 0rem
+    
+    body .container .article-box .pic-container img
+        width: 100%
+        height: auto
+    
+    body .container .article-box .info-container
+        width: 50rem
+        height: 25rem
+        border-radius: 0rem 0rem 1rem 1rem
+    
+@media ( max-width: 818px )
+    body .container .article-box
+         width: 40rem
+    
+    body .container .article-box .pic-container
+        width: 40rem
+    
+    body .container .article-box .info-container
+        width: 40rem
+
+@media ( max-width: 651px )
+    body .container
+        width: 90vw
+        height: 60vh
+
+    body .container .article-box
+        width: 100%
+        height: 100%
+    
+    body .container .article-box .pic-container
+        width: 100%
+        height: 100%
+    
+    body .container .article-box .info-container
+        width: 100%
+        height: 22rem
+        justify-content: flex-start
+    
+    body .container .article-box .info-container .title
+        width: 85%
+        height: auto
+        font-size: 0.5rem
+        margin-top: 2rem
+
+    body .container .article-box .info-container .info
+        width: 85%
+        margin-top: 1rem
+    
+    body .container .article-box .info-container .author-box
+        width: 100%
+        margin-top: 1.5rem
+        border-radius: 0rem 0rem 1rem 1rem
+    
+    body .container .article-box .info-container .author-box .author-pic
+        margin-left: 7.5%
+
+    body .container .article-box .info-container .author-box .author-name
+        width: 12rem
+    
+    body .container .article-box .info-container .author-box .share
+        margin-right: 7.5%
+
+    body .container .article-box .info-container .author-box .share-box
+        width: 80%
+        height: 100%
+        top: 0rem
+        left: 0rem
+        border-radius: 0rem 0rem 1rem 1rem
+        justify-content: flex-start
+
+    body .container .article-box .info-container .author-box .share-box::after
+        display: none
+    
+    body .container .article-box .info-container .author-box .share-box .share-text
+        margin-left: 2rem
